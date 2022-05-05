@@ -75,7 +75,7 @@ struct AutoBrake {
 		  bus.subscribe([this, &bus](const SpeedLimitDetected& sld) {
 			  last_known_speed_limit_ms = sld.speed_mps;
 			  if (last_known_speed_limit_ms < sld.speed_mps) {
-				  bus.publish(BrakeCommand{ 0 });
+				  bus.publish(BrakeCommand{ 3 });
 			  }
 			  });
 	}
